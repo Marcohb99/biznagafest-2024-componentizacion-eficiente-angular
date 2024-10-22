@@ -16,7 +16,7 @@
 
       <div class="space-y-3 mt-4">
         <TodoItem
-          v-for="(todo) in filteredTodos"
+          v-for="(todo) in todos"
           :key="todo.id"
           :todo="todo"
           :users="users"
@@ -43,7 +43,7 @@ const selectedUser = ref('');
 const filter = ref('');
 
 const {
-  filteredTodos,
+  todos,
   addTodo,
   toggleCompleted,
   updateText,

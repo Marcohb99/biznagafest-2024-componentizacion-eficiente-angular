@@ -1,4 +1,4 @@
-import { ref, computed, watch, onMounted, type Ref } from 'vue';
+import { ref, watch, onMounted, type Ref } from 'vue';
 import { type Todo } from '@/types/Todo';
 
 export default function useTodosNonOptimized(selectedUser: Ref<string>, filter: Ref<string>) {
@@ -122,19 +122,6 @@ export default function useTodosNonOptimized(selectedUser: Ref<string>, filter: 
     }
   };
 
-  const filteredTodos = computed(() => {
-    let filtered = todos.value;
-    if (filter.value === 'completed') {
-      filtered = filtered.filter((todo) => todo.completed);
-    } else if (filter.value === 'incomplete') {
-      filtered = filtered.filter((todo) => !todo.completed);
-    }
-    if (selectedUser.value) {
-      filtered = filtered.filter((todo) => todo.user === selectedUser.value);
-    }
-    return filtered;
-  });
-
   watch([selectedUser, filter], () => {
     fetchTodos();
   });
@@ -145,7 +132,6 @@ export default function useTodosNonOptimized(selectedUser: Ref<string>, filter: 
 
   return {
     todos,
-    filteredTodos,
     fetchTodos,
     addTodo,
     toggleCompleted,
