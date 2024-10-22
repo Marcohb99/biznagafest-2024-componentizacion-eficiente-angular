@@ -35,8 +35,8 @@ import { ref, computed, onMounted, watch } from 'vue';
 import { type Todo } from '@/types/Todo';
 import TodoInput from './TodoInput.vue';
 import TodoItem from './TodoItem.vue';
-import UserFilter from './UserFilter.vue';
-import StatusFilter from './StatusFilter.vue';
+import UserFilter from '@/components/filter/UserFilter.vue';
+import StatusFilter from '@/components/filter/StatusFilter.vue';
 
 const users = ref<string[]>(['Manu', 'Cris', 'Bob']);
 const selectedUser = ref('');

@@ -34,9 +34,9 @@
 import { ref } from 'vue';
 import TodoInput from './TodoInput.vue';
 import TodoItem from './TodoItem.vue';
-import UserFilter from './UserFilter.vue';
-import StatusFilter from './StatusFilter.vue';
-import useTodosNonOptimized from '@/composables/useTodosNonOptimized';
+import UserFilter from '@/components/filter/UserFilter.vue';
+import StatusFilter from '@/components/filter/StatusFilter.vue';
+import useTodos from '@/composables/useTodos';
 
 const users = ref<string[]>(['Manu', 'Cris', 'Bob']);
 const selectedUser = ref('');
@@ -49,5 +49,5 @@ const {
   updateText,
   updateUser,
   deleteTodo,
-} = useTodosNonOptimized(selectedUser, filter);
+} = useTodos(selectedUser, filter);
 </script>
