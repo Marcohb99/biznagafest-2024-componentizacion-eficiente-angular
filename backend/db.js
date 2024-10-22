@@ -9,7 +9,7 @@ const db = new sqlite3.Database('./todo.sqlite', (err) => {
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       text TEXT NOT NULL,
       completed BOOLEAN NOT NULL DEFAULT 0,
-      user TEXT DEFAULT NULL
+      user TEXT NOT NULL DEFAULT ''
     )`, (err) => {
       if (err) {
         console.error('Error creating table', err);
