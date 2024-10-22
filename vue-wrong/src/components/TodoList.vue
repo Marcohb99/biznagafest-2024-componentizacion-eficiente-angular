@@ -81,7 +81,7 @@
             @change="(e) => updateUser(todo, e.target.value)"
             class="w-32 bg-gray-100 text-sm rounded-full px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800"
           >
-            <option value="" :selected="todo.user === ''">Unassigned</option>
+            <option value="" :selected="todo.user === ''">Sin asignar</option>
             <option v-for="user in users" :key="user" :value="user" :selected="todo.user === user">
               {{ user }}
             </option>

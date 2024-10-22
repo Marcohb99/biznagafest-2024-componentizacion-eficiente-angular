@@ -1,29 +1,25 @@
-# vue
+# vue-wrong
 
-This template should help get you started developing with Vue 3 in Vite.
+Este ejemplo es una aplicación de lista de tareas (ToDo List) hecha con Vue 3 sin usar composiciones.
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+## Instalación
 
 ```sh
 pnpm install
 ```
 
-### Compile and Hot-Reload for Development
+### Desarrollo
 
 ```sh
 pnpm dev
 ```
 
-### Compile and Minify for Production
+### Producción
 
 ```sh
 pnpm build
 ```
+
+## Notas
+
+Este proyecto está generado como ejemplo para la charla sobre componetización eficiente en https://www.biznagafest.com/ por lo que está pensado para ser usado en producción. Si tienes que hacer una aplicación de lista de tareas, te recomiendo mirar otras opciones con varios problemas resueltos.
