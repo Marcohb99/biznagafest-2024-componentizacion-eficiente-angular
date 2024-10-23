@@ -32,10 +32,11 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import TodoInput from './TodoInput.vue';
-import TodoItem from './TodoItem.vue';
-import UserFilter from '@/components/filter/UserFilter.vue';
+
 import StatusFilter from '@/components/filter/StatusFilter.vue';
+import UserFilter from '@/components/filter/UserFilter.vue';
+import TodoInput from '@/components/todo/TodoInput.vue';
+import TodoItem from '@/components/todo/TodoItem.vue';
 import useTodos from '@/composables/useTodos';
 
 const users = ref<string[]>(['Manu', 'Cris', 'Bob']);

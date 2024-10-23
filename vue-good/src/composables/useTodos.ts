@@ -1,11 +1,12 @@
-import { ref, watch, onMounted, type Ref } from 'vue';
-import { type Todo } from '@/types/Todo';
+import { onMounted, type Ref,ref, watch } from 'vue';
+
 import {
-  fetchTodos as fetchTodosAPI,
   createTodo,
-  updateTodo,
   deleteTodo as deleteTodoAPI,
+  fetchTodos as fetchTodosAPI,
+  updateTodo,
 } from '@/services/api';
+import { type Todo } from '@/types/Todo';
 
 export default function useTodos(selectedUser: Ref<string>, filter: Ref<string>) {
   const todos = ref<Todo[]>([]);

@@ -1,4 +1,5 @@
-import { ref, watch, onMounted, type Ref } from 'vue';
+import { onMounted, type Ref,ref, watch } from 'vue';
+
 import { type Todo } from '@/types/Todo';
 
 export default function useTodosNonOptimized(selectedUser: Ref<string>, filter: Ref<string>) {
