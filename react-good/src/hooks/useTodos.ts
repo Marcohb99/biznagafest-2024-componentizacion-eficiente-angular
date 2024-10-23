@@ -15,7 +15,7 @@ interface UseTodosProps {
 
 export function useTodos({ selectedUser, filter }: UseTodosProps) {
   const [todos, setTodos] = useState<Todo[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   const fetchTodos = useCallback(async () => {
