@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, defineEmits } from 'vue';
+import { ref } from 'vue';
 
 const inputText = ref('');
 const emit = defineEmits(['add-todo']);
