@@ -13,6 +13,7 @@
         <input
           v-if="editing"
           v-model="editText"
+          type="text"
           @blur="finishEdit"
           @keyup.enter="finishEdit"
           class="w-full bg-transparent focus:outline-none text-gray-800"
