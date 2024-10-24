@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-gray-100 flex justify-center items-start py-12">
     <div class="w-full max-w-3xl bg-white shadow-lg rounded-lg p-8">
-      <h1 class="text-2xl font-bold mb-6 text-gray-900">Lista de tareas (Vue)</h1>
+      <h1 class="text-2xl font-bold mb-6 text-gray-900">Lista de tareas (Vue + Componentes)</h1>
 
       <div class="mb-6">
         <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
