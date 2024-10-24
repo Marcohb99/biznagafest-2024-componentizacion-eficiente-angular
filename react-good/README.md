@@ -58,4 +58,4 @@ pnpm test:coverage:watch
 
 ## Notas
 
-Este proyecto está generado como ejemplo para la charla sobre componetización eficiente en https://www.biznagafest.com/ por lo que está pensado para ser usado en producción. Si tienes que hacer una aplicación de lista de tareas, te recomiendo mirar otras opciones con varios problemas resueltos.
+Este proyecto está generado como ejemplo para la charla sobre componentización eficiente en https://www.biznagafest.com/ por lo que está pensado para ser usado en producción. Si tienes que hacer una aplicación de lista de tareas, te recomiendo mirar otras opciones con varios problemas resueltos.

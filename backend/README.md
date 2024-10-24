@@ -85,4 +85,4 @@ Ejemplo de respuesta:
 
 ## Notas
 
-Este proyecto está generado como ejemplo para la charla sobre componetización eficiente en https://www.biznagafest.com/ por lo que no tiene implementaciones de seguridad, validaciones, etc. No se recomienda usarlo en producción.
+Este proyecto está generado como ejemplo para la charla sobre componentización eficiente en https://www.biznagafest.com/ por lo que no tiene implementaciones de seguridad, validaciones, etc. No se recomienda usarlo en producción.
