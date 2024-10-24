@@ -32,6 +32,30 @@ pnpm lint:fix
 pnpm build
 ```
 
+### Testing
+
+```sh
+pnpm test
+```
+
+### Testing (watch mode)
+
+```sh
+pnpm test:watch
+```
+
+### Testing (coverage)
+
+```sh
+pnpm test:coverage
+```
+
+### Testing (coverage watch mode)
+
+```sh
+pnpm test:coverage:watch
+```
+
 ## Notas
 
 Este proyecto está generado como ejemplo para la charla sobre componetización eficiente en https://www.biznagafest.com/ por lo que está pensado para ser usado en producción. Si tienes que hacer una aplicación de lista de tareas, te recomiendo mirar otras opciones con varios problemas resueltos.
