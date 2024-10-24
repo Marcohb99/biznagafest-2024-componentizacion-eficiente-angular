@@ -93,6 +93,7 @@ export const TodoItem: FC<TodoItemProps> = ({
         <button
           onClick={() => onDeleteTodo(todo.id)}
           className="ml-4 text-gray-400 hover:text-red-500 focus:outline-none"
+          aria-label="Delete"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
