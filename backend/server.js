@@ -34,7 +34,6 @@ app.get('/todos', (req, res) => {
   });
 });
 
-// Add a new todo
 app.post('/todos', (req, res) => {
   const { text, user } = req.body;
   db.run('INSERT INTO todos (text, user) VALUES (?, ?)', [text, user], function(err) {
@@ -77,7 +76,6 @@ app.patch('/todos/:id', (req, res) => {
   });
 });
 
-// Delete a todo
 app.delete('/todos/:id', (req, res) => {
   db.run('DELETE FROM todos WHERE id = ?', req.params.id, (err) => {
     if (err) {
