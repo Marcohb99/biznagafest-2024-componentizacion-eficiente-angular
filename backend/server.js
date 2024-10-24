@@ -8,7 +8,6 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
-// Get all todos
 app.get('/todos', (req, res) => {
   const { user, filter } = req.query;
   let query = 'SELECT * FROM todos';
