@@ -128,7 +128,7 @@ export const TodoListWithLogic: FC = () => {
 
   useEffect(() => {
     fetchTodos();
-  }, [selectedUser, filter, fetchTodos]);
+  }, [fetchTodos]);
 
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center items-start py-12">
