@@ -1,15 +1,9 @@
 <template>
-  <TodoList title="Lista de tareas (Vue + TypeScript + Composition)">
-    <div class="mb-6">
-      <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-        <UserFilter :users="users" v-model="selectedUser" />
-        <StatusFilter v-model="filter" />
-      </div>
-    </div>
-
-    <div class="flex flex-row gap-2 items-center">
-      <TodoInput @add-todo="addTodo" />
-    </div>
+  <TodoListWithProps title="Lista de tareas (Vue + TypeScript + Prop Composition)"
+    :userFilter="userFilterComponent"
+    :statusFilter="statusFilterComponent"
+    :todoInput="todoInputComponent"
+  >
 
     <p v-if="isLoading" class="text-blue-500 mt-4">Cargando...</p>
     <p v-if="error" class="text-red-500 mt-4">Error: {{ error }}</p>
@@ -26,22 +20,44 @@
         @delete-todo="deleteTodo"
       />
     </div>
-  </TodoList>
+  </TodoListWithProps>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed,ref } from 'vue';
 
 import StatusFilter from '@/components/filter/StatusFilter.vue';
 import UserFilter from '@/components/filter/UserFilter.vue';
 import TodoInput from '@/components/todo/TodoInput.vue';
 import TodoItem from '@/components/todo/TodoItem.vue';
-import TodoList from '@/components/todo/TodoList.vue';
+import TodoListWithProps from '@/components/todo/TodoListWithProps.vue';
 import useTodos from '@/composables/useTodos';
 
 const users = ref<string[]>(['Manu', 'Cris', 'Bob']);
 const selectedUser = ref('');
 const filter = ref('');
+
+const userFilterComponent = computed(() => ({
+  component: UserFilter,
+  props: {
+    users: users.value,
+    modelValue: selectedUser.value,
+  },
+}));
+
+const statusFilterComponent = computed(() => ({
+  component: StatusFilter,
+  props: {
+    modelValue: filter.value,
+  },
+}));
+
+const todoInputComponent = computed(() => ({
+  component: TodoInput,
+  props: {
+    onAddTodo: addTodo,
+  },
+}));
 
 const {
   todos,

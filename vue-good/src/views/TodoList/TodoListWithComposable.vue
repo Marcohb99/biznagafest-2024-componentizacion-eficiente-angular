@@ -14,6 +14,9 @@
         <TodoInput @add-todo="addTodo" />
       </div>
 
+      <p v-if="isLoading" class="text-blue-500 mt-4">Cargando...</p>
+      <p v-if="error" class="text-red-500 mt-4">Error: {{ error }}</p>
+
       <div class="space-y-3 mt-4">
         <TodoItem
           v-for="(todo) in todos"
@@ -50,5 +53,7 @@ const {
   updateText,
   updateUser,
   deleteTodo,
+  isLoading,
+  error,
 } = useTodos(selectedUser, filter);
 </script>
