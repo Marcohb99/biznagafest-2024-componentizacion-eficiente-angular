@@ -9,7 +9,7 @@ import { TodoItem } from '@/components/todo/TodoItem';
 import { useTodos } from '@/hooks/useTodos';
 import { Todo } from '@/types/Todo';
 
-export const TodoList: FC = () => {
+export const TodoListWithHook: FC = () => {
   const [newTodo, setNewTodo] = useState('');
   const [users] = useState<string[]>(['Manu', 'Cris', 'Bob']);
   const [selectedUser, setSelectedUser] = useState('');
