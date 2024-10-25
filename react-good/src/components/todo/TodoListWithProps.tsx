@@ -1,6 +1,20 @@
 import { ReactNode } from "react";
 
-export const TodoListWithProps = ({ title, userFilter, statusFilter, todoInput, children }: { title: string, userFilter?: ReactNode, statusFilter?: ReactNode, todoInput?: ReactNode, children: ReactNode }) => {
+type TodoListWithPropsProps = {
+  title: string,
+  userFilter?: ReactNode,
+  statusFilter?: ReactNode,
+  todoInput?: ReactNode,
+  children: ReactNode
+};
+
+export const TodoListWithProps = ({
+  title,
+  userFilter,
+  statusFilter,
+  todoInput,
+  children,
+}: TodoListWithPropsProps) => {
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center items-start py-12">
       <div className="w-full max-w-3xl bg-white shadow-lg rounded-lg p-8">
