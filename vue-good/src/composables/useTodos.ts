@@ -10,12 +10,17 @@ import { type Todo } from '@/types/Todo';
 
 export default function useTodos(selectedUser: Ref<string>, filter: Ref<string>) {
   const todos = ref<Todo[]>([]);
+  const isLoading = ref(true);
+  const error = ref<unknown | null>(null);
 
   const fetchTodos = async () => {
     try {
+      isLoading.value = true;
       todos.value = await fetchTodosAPI(selectedUser.value, filter.value);
-    } catch (error) {
-      console.error('Error fetching todos:', error);
+    } catch (err) {
+      error.value = err;
+    } finally {
+      isLoading.value = false;
     }
   };
 
@@ -24,8 +29,8 @@ export default function useTodos(selectedUser: Ref<string>, filter: Ref<string>)
     try {
       await createTodo(text);
       fetchTodos();
-    } catch (error) {
-      console.error('Error adding todo:', error);
+    } catch (err) {
+      error.value = err;
     }
   };
 
@@ -33,8 +38,8 @@ export default function useTodos(selectedUser: Ref<string>, filter: Ref<string>)
     try {
       await updateTodo(id, updates);
       fetchTodos();
-    } catch (error) {
-      console.error('Error updating todo:', error);
+    } catch (err) {
+      error.value = err;
     }
   };
 
@@ -55,8 +60,8 @@ export default function useTodos(selectedUser: Ref<string>, filter: Ref<string>)
     try {
       await deleteTodoAPI(id);
       fetchTodos();
-    } catch (error) {
-      console.error('Error deleting todo:', error);
+    } catch (err) {
+      error.value = err;
     }
   };
 
@@ -70,6 +75,8 @@ export default function useTodos(selectedUser: Ref<string>, filter: Ref<string>)
 
   return {
     todos,
+    isLoading,
+    error,
     fetchTodos,
     addTodo,
     toggleCompleted,
