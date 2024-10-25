@@ -173,5 +173,3 @@ export const TodoListWithLogic: FC = () => {
     </div>
   );
 };
-
-export default TodoListWithLogic;

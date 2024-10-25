@@ -81,5 +81,3 @@ export const TodoListWithHandling: FC = () => {
     </div>
   );
 };
-
-export default TodoListWithHandling;
