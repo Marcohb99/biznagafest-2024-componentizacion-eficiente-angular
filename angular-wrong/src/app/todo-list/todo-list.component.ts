@@ -1,12 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {Todo} from '../models/todo';
 import {FormsModule} from '@angular/forms';
+import {NgClass} from '@angular/common';
 
 @Component({
   selector: 'app-todo-list',
   standalone: true,
   imports: [
-    FormsModule
+    FormsModule,
+    NgClass
   ],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.css'
@@ -157,19 +159,16 @@ export class TodoListComponent implements OnInit {
     }
   }
   startEdit(index: number) {
-    // this.todos[index].editing = true;
-    // this.$nextTick(() => {
-    //   this.$refs.editInput[0].focus();
-    // });
+    this.todos[index].editing = true;
   }
-  finishEdit(index: number, todo: Todo) {
+  finishEdit(index: number, todo: Todo, newName: string) {
     this.todos[index].editing = false;
     if (this.todos[index].text.trim() === '') {
       this.deleteTodo(todo.id);
       return;
     }
-
-    this.updateText(todo);
+    const newTodo = {...todo, text: newName};
+    this.updateText(newTodo);
   }
 
   fetchTodosByUser(user: string) {

@@ -62,17 +62,17 @@
               <div class="flex-grow">
                 @if(todo.editing) {
                   <input
-                    [value]="todo.text"
-                    blur.stop="finishEdit($index, todo)"
-                    (keyup.enter)="todo.editing = false"
+                    #newName
+                    [ngModel]="todo.text"
+                    (keyup.enter)="finishEdit($index, todo, newName.value)"
 
                     class="w-full bg-transparent focus:outline-none text-gray-800"
-                    ref="editInput"
+                    [name]="'editInput'+$index"
                   />
                 } @else {
                   <span
                     (click)="startEdit($index)"
-                    [class]="{ 'line-through text-gray-400': todo.completed }"
+                    [ngClass]="{ 'line-through text-gray-400': todo.completed }"
                     class="cursor-text"
                   >
                     {{ todo.text }}
