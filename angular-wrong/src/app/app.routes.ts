@@ -5,6 +5,6 @@ export const routes: Routes = [
   {
     path: '',
     component: TodoListComponent,
-    title: 'Home page',
+    title: 'BiznagaFest 2024 - Componentización eficiente',
   },
 ];

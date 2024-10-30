@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChildren} from '@angular/core';
 import {Todo} from '../models/todo';
 import {FormsModule} from '@angular/forms';
 import {NgClass} from '@angular/common';
+import {tick} from '@angular/core/testing';
 
 @Component({
   selector: 'app-todo-list',
@@ -160,6 +161,11 @@ export class TodoListComponent implements OnInit {
   }
   startEdit(index: number) {
     this.todos[index].editing = true;
+    setTimeout(() => {
+        document.getElementById('editInput'+index)?.focus()
+      },
+      1
+    )
   }
   finishEdit(index: number, todo: Todo, newName: string) {
     this.todos[index].editing = false;
