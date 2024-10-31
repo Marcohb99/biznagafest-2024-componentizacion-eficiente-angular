@@ -18,15 +18,7 @@
         </div>
       </div>
 
-      <div class="flex flex-row gap-2 items-center">
-        <input
-          #newTodo
-          (keyup.enter)="addTodo(newTodo.value)"
-          placeholder="Añadir nueva tarea..."
-          class="w-4/6 md:w-5/6 p-2 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 placeholder-gray-400"
-        />
-        <button (click)="addTodo(newTodo.value)" class="w-2/6 md:w-1/6 p-2.5 md:p-2 rounded-lg text-sm md:text-base bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600">Añadir</button>
-      </div>
+      <app-todo-input (newTodo)="addTodo($event)"></app-todo-input>
 
       <div class="space-y-3 mt-4">
         @for (todo of todos; track $index) {
