@@ -4,6 +4,7 @@ import {FormsModule} from '@angular/forms';
 import {NgClass} from '@angular/common';
 import {tick} from '@angular/core/testing';
 import {UserFilterComponent} from '../components/user-filter/user-filter.component';
+import {StatusFilterComponent} from '../components/status-filter/status-filter.component';
 
 @Component({
   selector: 'app-todo-list',
@@ -11,7 +12,8 @@ import {UserFilterComponent} from '../components/user-filter/user-filter.compone
   imports: [
     FormsModule,
     NgClass,
-    UserFilterComponent
+    UserFilterComponent,
+    StatusFilterComponent
   ],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.css'
