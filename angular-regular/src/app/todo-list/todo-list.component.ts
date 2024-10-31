@@ -3,13 +3,15 @@ import {Todo} from '../models/todo';
 import {FormsModule} from '@angular/forms';
 import {NgClass} from '@angular/common';
 import {tick} from '@angular/core/testing';
+import {UserFilterComponent} from '../components/user-filter/user-filter.component';
 
 @Component({
   selector: 'app-todo-list',
   standalone: true,
   imports: [
     FormsModule,
-    NgClass
+    NgClass,
+    UserFilterComponent
   ],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.css'
