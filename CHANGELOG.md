@@ -1,3 +1,12 @@
+## 0.2.0 (2024-11-04)
+
+### Feat
+
+- **angular-regular**: extract todo list and todo item
+- **angular-regular**: extract todo input component
+- **angular-regular**: extract status filter component
+- **angular-regular**: create angular regular directory
+
 ## 0.1.0 (2024-10-30)
 
 ### Feat
