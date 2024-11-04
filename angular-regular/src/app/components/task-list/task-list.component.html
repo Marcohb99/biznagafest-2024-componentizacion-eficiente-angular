@@ -1,0 +1,15 @@
+<div class="space-y-3 mt-4">
+  @for (todo of todos; track $index) {
+    <app-task-item
+      [todo]="todo"
+      [users]="users"
+      [index]="$index"
+      (updateUserEmitter)="updateUser($event)"
+      (deleteTodoEmitter)="deleteTodo($event)"
+      (finishEditEmitter)="finishEdit($event.index, $event.todo, $event.value)"
+      (startEditEmitter)="startEdit($event)"
+      (todoCompletedEmitter)="toggleCompleted($event)"
+    >
+    </app-task-item>
+  }
+</div>

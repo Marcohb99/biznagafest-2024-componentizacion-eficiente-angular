@@ -6,6 +6,7 @@ import {tick} from '@angular/core/testing';
 import {UserFilterComponent} from '../components/user-filter/user-filter.component';
 import {StatusFilterComponent} from '../components/status-filter/status-filter.component';
 import {TodoInputComponent} from '../components/todo-input/todo-input.component';
+import {TaskListComponent} from '../components/task-list/task-list.component';
 
 @Component({
   selector: 'app-todo-list',
@@ -15,7 +16,8 @@ import {TodoInputComponent} from '../components/todo-input/todo-input.component'
     NgClass,
     UserFilterComponent,
     StatusFilterComponent,
-    TodoInputComponent
+    TodoInputComponent,
+    TaskListComponent
   ],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.css'
@@ -122,16 +124,16 @@ export class TodoListComponent implements OnInit {
       console.error('Error updating todo:', error);
     }
   }
-  async updateUser(todo: Todo, user: string) {
-    if (user === todo.user) return;
+  async updateUser(data: any) {
+    if (data.user === data.todo.user) return;
     try {
-      const response = await fetch(`http://localhost:3000/todos/${todo.id}`, {
+      const response = await fetch(`http://localhost:3000/todos/${data.todo.id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          user: user,
+          user: data.user,
         }),
       });
 
